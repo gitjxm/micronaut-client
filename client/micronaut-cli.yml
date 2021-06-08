@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.example
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [app-name, cache-hazelcast, config-consul, consul, discovery-consul, http-client, java, java-application, jdbc-hikari, junit, logback, lombok, management, maven, mysql, netty-server, readme, shade, testcontainers, yaml]

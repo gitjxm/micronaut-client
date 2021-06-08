@@ -1,0 +1,6 @@
+micronaut:
+  application:
+    name: client
+  config-client:
+    enabled: true
+consul.client.defaultZone: ${CONSUL_HOST:192.168.0.103}:${CONSUL_PORT:8500}

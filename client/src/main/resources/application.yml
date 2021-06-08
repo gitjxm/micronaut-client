@@ -1,0 +1,54 @@
+micronaut:
+  application:
+    instance:
+      id: ${random.shortuuid}
+  caches:
+    discovery-client:
+      enabled: false
+  server:
+    port: 8081
+
+datasources:
+  default:
+    url: ${JDBC_URL:`jdbc:mysql://192.168.31.27:33306/de_sys_permission?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true`}
+    driverClassName: ${JDBC_DRIVER:com.mysql.cj.jdbc.Driver}
+    username: ${JDBC_USER:root}
+    password: ${JDBC_PASSWORD:de@123456}
+    schema-generate: CREATE
+    dialect: MYSQL
+
+consul:
+  client:
+    registration:
+      enabled: true
+      ip-addr: ${IP:192.168.0.103}
+      prefer-ip-address: true
+
+
+hystrix:
+  stream:
+    enabled: true
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+
+hazelcast.network.addresses: '[''192.168.0.105:5701'']'
+
+endpoints:
+  beans:
+    enabled: true
+    sensitive: false
+  env:
+    enabled: true
+    sensitive: false
+  loggers:
+    write-sensitive: false
+    enabled: true
+    sensitive: false
+  routes:
+    enabled: true
+    sensitive: false
+
