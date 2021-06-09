@@ -1,6 +1,5 @@
 package com.example.dto;
 
-import com.hzon.de.error.DeError;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -55,21 +54,6 @@ public class ApiResult<T> implements Serializable {
         r.msg = msg;
         return r;
     }
-
-    /**
-     * 异常返回
-     *
-     * @param err
-     * @param <T>
-     * @return
-     */
-    public static <T> ApiResult<T> notOk(final DeError err){
-        ApiResult r = new ApiResult();
-        r.code = err.getErrorCode();
-        r.msg =err.getErrorMsg();
-        return r;
-    }
-
 
     /**
      * 判断是否成功返回

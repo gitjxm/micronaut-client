@@ -21,7 +21,7 @@ consul:
   client:
     registration:
       enabled: true
-      ip-addr: ${IP:192.168.0.103}
+      ip-addr: ${IP:127.0.0.1}
       prefer-ip-address: true
 
 

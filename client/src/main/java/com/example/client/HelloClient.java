@@ -9,7 +9,7 @@ import io.micronaut.http.client.annotation.Client;
 
 @Client(id = "demo", path = "/demo")
 public interface HelloClient {
-    @HystrixCommand
+//    @HystrixCommand
     @Get("/hello/{id}")
     ApiResult<String> hello(@PathVariable String id);
 
